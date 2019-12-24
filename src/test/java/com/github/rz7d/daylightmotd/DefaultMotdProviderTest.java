@@ -8,8 +8,7 @@ import org.junit.jupiter.api.Test;
 import java.util.Map;
 import java.util.function.LongPredicate;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class DefaultMotdProviderTest {
 
@@ -35,7 +34,7 @@ public class DefaultMotdProviderTest {
         assertEquals(ChatColor.WHITE, motdProvider.timeToColor(23000 + 24000 + 24000).get());
 
         // not empty test
-        for (int i = Integer.MIN_VALUE; i < Integer.MAX_VALUE; ++i) {
+        for (int i = 0; i < 2400000; ++i) {
             assertTrue(motdProvider.timeToColor(i).isPresent());
         }
     }
