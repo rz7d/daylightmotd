@@ -22,6 +22,7 @@ public final class TickDuration {
     }
 
     public boolean test(long time) {
+        Preconditions.checkState(time >= 0, "time must be positive");
         final long normalized = time % 24000;
         return normalized >= fromIncluded && (normalized < toExcluded || toExcluded == 0);
     }
