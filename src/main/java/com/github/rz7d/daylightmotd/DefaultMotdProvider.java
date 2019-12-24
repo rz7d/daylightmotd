@@ -36,6 +36,7 @@ public final class DefaultMotdProvider implements MotdProvider {
 
     @Override
     public String apply(long worldTime, String defaultMotd) {
+        // Defensive orElse
         return timeToColor(worldTime).orElse(ChatColor.GRAY) + defaultMotd;
     }
 
