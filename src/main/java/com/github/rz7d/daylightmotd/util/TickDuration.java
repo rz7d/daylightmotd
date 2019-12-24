@@ -23,7 +23,7 @@ public final class TickDuration {
 
     public boolean test(long time) {
         final long normalized = time % 24000;
-        return (normalized >= fromIncluded) && (normalized < toExcluded);
+        return normalized >= fromIncluded && (normalized < toExcluded || toExcluded == 0);
     }
 
     @Override
