@@ -1,10 +1,15 @@
 package com.github.rz7d.daylightmotd.util;
 
+import com.google.common.base.Preconditions;
+
 import java.util.Objects;
 
 public final class TickDuration {
 
     public static TickDuration between(long fromIncluded, long toExcluded) {
+        Preconditions.checkState(fromIncluded >= 0, "fromIncluded must be positive");
+        Preconditions.checkState(toExcluded >= 0, "toExcluded must be positive");
+        Preconditions.checkState(fromIncluded <= toExcluded, "toExcluded must be larger than fromIncluded");
         return new TickDuration(fromIncluded, toExcluded);
     }
 
