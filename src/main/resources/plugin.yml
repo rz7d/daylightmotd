@@ -1,3 +1,4 @@
 name: ${project.name}
 version: ${project.version}
 main: com.github.rz7d.daylightmotd.DaylightMotd
+api-version: 1.13
